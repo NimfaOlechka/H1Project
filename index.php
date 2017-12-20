@@ -1,28 +1,17 @@
 
 <?php 
-
   session_start(); 
 
-
-
   if (!isset($_SESSION['username'])) {
-
   	$_SESSION['msg'] = "You must log in first";
-
   	header('location: login.php');
-
   }
 
   if (isset($_GET['logout'])) {
-
   	session_destroy();
-
   	unset($_SESSION['username']);
-
   	header("location: login.php");
-
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +21,7 @@
 <head>
 
 	<title>Home</title>
-
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="snake.js"></script>
-	<script src="app.js"></script>
 </head>
 
 <body>
@@ -44,7 +30,6 @@
 	</div>
 
 <div class="content">
-
   	<!-- notification message -->
   	<?php if (isset($_SESSION['success'])) : ?>
       <div class="error success" >
@@ -70,7 +55,10 @@
 			<br>
     	<button id="btn">START</button>
 
-	</div>
+		</div>
+	
+	<script src="snake.js"></script>
+	<script src="app.js"></script>
 		
 	<!--displaying top 5 players from db-->
     <form class="top5" method="_GET">
@@ -86,9 +74,9 @@
 				Score
 			</th>
 		<?php
-		 include_once 'server.php';
-			$sql="SELECT name,id FROM `users` ORDER BY id DESC LIMIT 5;";
-			$records=mysqli_query($db,$sql);
+		 include_once 'dbconn.php';
+			$sql="SELECT scores.score, users.name FROM scores INNER JOIN users ON scores.user_id=users.id ORDER BY scores.score DESC LIMIT 5;";
+			$records=mysqli_query($connect,$sql);
 			$recordsCheck = mysqli_num_rows($records);
 		
 			if ($recordsCheck > 0)
@@ -96,7 +84,7 @@
 					while($row = mysqli_fetch_assoc($records)){
 					echo "<tr>";
 					echo "<td>".$row['name']."</td>";
-					echo "<td>".$row['id']."<br>"."</td>";
+					echo "<td>".$row['score']."<br>"."</td>";
 					echo "</tr>";
 		  		}
 	  
