@@ -1,7 +1,6 @@
-<?php include('server.php') ?>
+<?php include('signin.php') ?>
 
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -15,9 +14,9 @@
   	<h2> Login </h2>
   </div>
 	 
-  <form method="post" action="login.php" class="input_form">
-  	<?php include('errors.php'); ?>
-  	<div class="input">
+  <form method="POST" action="signin.php" class="input_form">
+  	<!--?php include('errors.php'); ?-->
+	<div class="input">
   		<label><b>Username</b></label>
   		<input type="text" name="uname" >
   	</div>
