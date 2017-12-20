@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // php code to Insert data into mysql database from input text
 if(isset($_GET['w1']))
 {
@@ -8,20 +8,12 @@ if(isset($_GET['w1']))
     $score = $_GET['w1'];
     
     // connect to mysql database using mysqli
-
-    $connect = mysqli_connect('localhost', 'root', '', 'sql');
-
-    // Check connection
-
-    if($connect === false) {
-        die("ERROR: Could not connect. ") . mysqli_connect_error();
-    }
-    
+    include_once 'dbconn.php';
+      
     // mysql query to insert data
 
-    $query = "INSERT INTO `scores`(`score`) VALUES ('$score')";
-    
-    $result = mysqli_query($connect,$query);
+    $query = "INSERT INTO `scores`(`score`) VALUES ('$score') WHERE user_id=$_SESSION['username']";
+        $result = mysqli_query($connect,$query);
     
     // check if mysql query successful
 
