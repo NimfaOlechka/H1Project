@@ -1,0 +1,57 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}
+body{
+	font-size: 120%;
+	width: 100%;
+	background-image: url('img/wallpaper.jpg');
+	
+	
+}
+
+.header {
+	width: 30%;
+	margin:10px auto;
+	color: white;
+	background: #5f9ea0;
+	text-align: center;
+	border: 5px solid #00001a;
+	border-radius: 10px;
+	padding: 20px;
+}
+.input_form{
+	width: 30%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 5px solid #00001a;
+	background: white;
+	border-radius: 10px;
+}
+
+.input_form label{
+	display: block;
+}
+.input_form input[type="text"]{
+	width:100%;
+	padding-right:10px;
+	text-decoration: none;
+	
+}
+.input_form input[type='password']{
+	width: 100%;
+	padding-right: 10px;
+}
+
+.btn{
+	font:12px Arial Black, Helvetica;
+	width: 100px;
+	margin-top: 10px;
+	border:1px solid #00001a;
+	border-radius: 10px;
+}
+.content{
+	margin: 10%;
+	color: #00ffff;
+}

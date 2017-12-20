@@ -33,7 +33,7 @@
 
 	<title>Home</title>
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
 
 </head>
 
@@ -60,9 +60,11 @@
           <?php 
 
           	echo $_SESSION['success'];
-            
+            //echo $_SESSION['info'];
+
           	unset($_SESSION['success']);
-           
+            //unset($_SESSION['info']);
+
           ?>
 
       	</h3>
@@ -78,7 +80,8 @@
     <?php  if (isset($_SESSION['username'])) : ?>
 
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-            
+      <!--p><?php //echo $_SESSION['info']; ?></p-->
+
     	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
 
     <?php endif ?>
@@ -98,7 +101,19 @@
           <tr>
             <th>Score</th>
           </tr>
-                             
+          <? php 
+          if (mysqli_num_rows($_SESSION['score'])>0)
+            { while($row = mysqli_fetch_array($_SESSION['score'])
+              {
+          ?>
+          <tr>
+            <td><?php echo $row['score']; ?></td>
+          </tr>
+          <? php
+            }
+          }
+          ?>
+          
         </table>
       </div>
 
