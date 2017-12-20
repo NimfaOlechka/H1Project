@@ -61,7 +61,7 @@ table, td, tr {
 table{
 	border-spacing: 5px;
 	background-color: #3399ff;
-	margin-left:50px;
+	margin:50px auto;
 }
 .content{
 	margin: 10%;
