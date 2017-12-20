@@ -51,6 +51,18 @@ body{
 	border:1px solid #00001a;
 	border-radius: 10px;
 }
+table, td, tr {
+	border: 3px solid black;
+	padding: 3px;
+	text-align: center;
+	border-radius: 10px;
+	
+}
+table{
+	border-spacing: 5px;
+	background-color: #3399ff;
+	margin-left:50px;
+}
 .content{
 	margin: 10%;
 	color: #00ffff;
