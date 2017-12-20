@@ -70,12 +70,7 @@ var drawModule = (function () {
 
         // Send score to DB
         var saveScore = score;
-
-        var hiddenElement = document.createElement('a');
-
-        hiddenElement.href = 'data:attachment/text,' + encodeURI(saveScore);
-        hiddenElement.target = '_blank';
-        hiddenElement.download = 'score.txt';
+        window.location.href = "snake.php?w1=" + score;
         hiddenElement.click();
 
         // Overwrite old file to new file instead of making a new one
