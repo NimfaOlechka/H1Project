@@ -34,7 +34,8 @@
 	<title>Home</title>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
-
+	<script src="snake.js"></script>
+	<script src="app.js"></script>
 </head>
 
 <body>
@@ -62,13 +63,16 @@
     	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 
-	<!--video clip-->
-      <div class='video'>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qTSDL94_Y7M" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen>
-        </iframe>
-      </div>
-	  
-	  <!--displaying top 5 players from db-->
+	<!--Snake game-->
+      <div class="center">
+	
+		<canvas id="canvas" width="560" height="250" style="border:1px solid #000000;"></canvas>
+			<br>
+    	<button id="btn">START</button>
+
+	</div>
+		
+	<!--displaying top 5 players from db-->
     <form class="top5" method="_GET">
     
     	<div class="header">
