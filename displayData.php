@@ -11,13 +11,20 @@ $recordsCheck = mysqli_num_rows($records);
 <html>
 <head>
   <title>TOP 5</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
   <div class="header">
     <h2> TOP 5 PLAYERS </h2>
   </div>
-   
+   <table style="width:30%" >
+   <th> 
+   Name
+   </th>
+   <th> 
+  Score
+   </th>
   <?php
   if ($recordsCheck > 0){
 	 while($row = mysqli_fetch_assoc($records)){
@@ -31,5 +38,6 @@ $recordsCheck = mysqli_num_rows($records);
   }
  
   ?>
+  </table>
 
 </body>
