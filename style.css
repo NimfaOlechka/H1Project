@@ -6,7 +6,7 @@
 body{
 	font-size: 120%;
 	width: 100%;
-	background-image: url('img/wallpaper.jpg');
+	background-image: url('img/snake.jpg');
 	
 	
 }
@@ -14,8 +14,8 @@ body{
 .header {
 	width: 30%;
 	margin:10px auto;
-	color: white;
-	background: #5f9ea0;
+	color: #1f1f2e;
+	background: linear-gradient(to bottom, #99ff66 0%, #999966 100%);
 	text-align: center;
 	border: 5px solid #00001a;
 	border-radius: 10px;
@@ -25,7 +25,7 @@ body{
 	width: 30%;
 	margin: 0px auto;
 	padding: 20px;
-	border: 5px solid #00001a;
+	border: 5px solid #004d00;
 	background: white;
 	border-radius: 10px;
 }
@@ -50,6 +50,7 @@ body{
 	margin-top: 10px;
 	border:1px solid #00001a;
 	border-radius: 10px;
+	display: block;
 }
 table, td, tr {
 	border: 3px solid black;
@@ -60,10 +61,10 @@ table, td, tr {
 }
 table{
 	border-spacing: 5px;
-	background-color: #3399ff;
+	background-color: #transparent;
 	margin:50px auto;
 }
 .content{
 	margin: 10%;
-	color: #00ffff;
+	color: #bfff00;
 }

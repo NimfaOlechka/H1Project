@@ -12,21 +12,34 @@ if(isset($_GET['w1']))
     include_once 'dbconn.php';
       
     // mysql query to insert data
-   	$query="UPDATE `players` SET `score`= '$score' WHERE `name`= '$name';";
-    $result = mysqli_query($connect,$query);
+   	//$query="UPDATE `players` SET `score`= '$score' WHERE `name`= '$name';";
+    //$result = mysqli_query($connect,$query);
     
-    // check if mysql query successful
+	
+	// Take existed score from table
+    $sql = "SELECT `score` FROM `players` WHERE `name`= '$name';";
+    $test = mysqli_query($connect, $sql);
+    $row = mysqli_fetch_assoc($test);
+    $var = $row['score'];
 
-    if ($result) {
-        echo 'Data Inserted';
+    // Take current score with score in database
+    if ($_GET['w1'] > $var) {
+    
+        // mysql query to update data
+        $query="UPDATE `players` SET `score`= '$score' WHERE `name`= '$name';";
 		
     } else {
-        echo 'Data Not Inserted';
+        header('location:index.php');
     }
+
+    $result = mysqli_query($connect,$query);
+	header('location:index.php');
+	    
     
     //mysqli_free_result($result);
     mysqli_close($connect);
-	header('location:index.php');
+	
+	
 }
 
 ?>
