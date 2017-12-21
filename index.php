@@ -76,7 +76,7 @@
 			</th>
 		<?php
 		 include_once 'dbconn.php';
-			$sql="SELECT scores.score, users.name FROM scores INNER JOIN users ON scores.user_id=users.id ORDER BY scores.score DESC LIMIT 5;";
+			$sql="SELECT name, score FROM `players` ORDER BY score DESC LIMIT 5;";
 			$records=mysqli_query($connect,$sql);
 			$recordsCheck = mysqli_num_rows($records);
 		

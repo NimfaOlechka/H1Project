@@ -9,7 +9,8 @@
  $username = $_POST['uname'];
  $password =$_POST['psw'];
  
-$sql="SELECT * FROM `users`WHERE `name`= '$username' AND `password`='$password';";
+//selection of appropriate row frm table 
+$sql="SELECT * FROM `players` WHERE `name`= '$username' AND `password`='$password';";
 $records=mysqli_query($connect,$sql);
 $recordsCheck = mysqli_num_rows($records);
  
@@ -20,7 +21,7 @@ $recordsCheck = mysqli_num_rows($records);
 		{
 			$_SESSION['user_id']=$row['id'];
 			$_SESSION['username']=$row['name'];
-			$_SESSION['success'] = "You are at home now my child";
+			$_SESSION['success'] = "You are at home now my Precious";
 		}
 	}
 header('location:index.php');
