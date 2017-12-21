@@ -1,4 +1,8 @@
+	<!-- PHP -->
+
 $query = "UPDATE `scores` SET `score`= $score WHERE name = '$_SESSION['name']";
+
+	<!-- PHP -->
 
 <?php
 
@@ -51,4 +55,24 @@ if(isset($_GET['w1']))
     mysqli_close($connect);
 }
 
+	<!-- HTML -->
+
 ?>
+
+	<!-- Snake Game -->
+	<div class="center">
+	
+		<canvas id="canvas" width="560" height="250" style="border:1px solid #000000;"></canvas>
+			<br>
+    	<button id="btn" onclick="myScroll()">START</button>
+
+	</div>
+
+	<script>
+		function myScroll() {
+			window.onscroll = function () { window.scrollTo(0, 0); };
+		}
+	</script>
+	
+	<script src="snake.js"></script>
+	<script src="app.js"></script>
